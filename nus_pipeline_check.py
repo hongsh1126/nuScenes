@@ -18,10 +18,10 @@ from nuscenes.nuscenes import NuScenes
 from nuscenes.utils.data_classes import LidarPointCloud
 from nuscenes.utils.splits import create_splits_scenes
 
-DATAROOT = os.environ.get("NUS_ROOT", r"F:\Research\T-IV Dataset\v1.0-mini")
-WORK = Path(os.environ.get("NUS_WORK", r"F:\nuscenes_work"))
+DATAROOT = os.environ.get("NUS_ROOT", "data/v1.0-mini")
+WORK = Path(os.environ.get("NUS_WORK", "work"))
 WORK.mkdir(parents=True, exist_ok=True)
-PP_ROOT = r"G:\내 드라이브\Research\Journal\2026\In progress\Rejected\27. TR-C\experiments\PointPillars"
+PP_ROOT = os.environ.get("PP_ROOT", "PointPillars")
 YOLO_W = r"G:\내 드라이브\Research\Journal\2026\In progress\TRC\yolo11n.pt"
 BINS = ((0, 20, "0-20"), (20, 40, "20-40"), (40, 60, "40-60"), (60, 80, "60-80"))
 CLS = {"car": 0, "pedestrian": 1, "twowheeler": 2}

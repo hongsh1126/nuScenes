@@ -6,7 +6,7 @@ from pathlib import Path
 
 import numpy as np
 
-WORK = Path(os.environ.get("NUS_WORK", r"F:\nuscenes_work"))
+WORK = Path(os.environ.get("NUS_WORK", "work"))
 frames = pickle.load(open(WORK / "frames.pkl", "rb"))
 BINS = ((0, 20, "0-20"), (20, 40, "20-40"), (40, 60, "40-60"), (60, 80, "60-80"))
 GATE, CAM_T, LID_T, FB_T, ROI_T, ASSOC_IOU, MATCH_M = 40.0, 0.25, 0.50, 0.75, 0.35, 0.30, 2.0
