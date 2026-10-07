@@ -15,7 +15,7 @@ This repository checks, end to end, a camera-first range-gating pipeline on the 
 |---|---|
 | `nus_pipeline_check.py` | Stage 1: loads nuScenes mini, runs the camera and LiDAR arms, saves per-frame results |
 | `nus_pipeline_eval.py` | Stage 2: verification checks and routing/fusion arms on the saved frames |
-| `patch_json_lidar.py` | Adds the optional `NUS_LIDAR_JSON` input to stage 1 (LiDAR arm from an MMDetection3D `results_nusc.json`) |
+| `patch_json_lidar.py` | Script that added the optional `NUS_LIDAR_JSON` input to stage 1 (LiDAR arm from an MMDetection3D `results_nusc.json`); the change is already applied in `nus_pipeline_check.py`, so it reports "already patched" |
 | `colab/run_mmdet3d_nuscenes.ipynb` | Colab notebook that runs the public nuScenes PointPillars checkpoint with MMDetection3D 1.4.0 (torch 2.1.0+cu118, mmcv 2.1.0, mmdet 3.2.0) on a T4 GPU |
 | `colab/make_notebook.py` | Generates the notebook |
 | `results/` | Outputs of the pipeline check (`pipeline_check*.json`, `stage1.log`) |
@@ -28,7 +28,7 @@ Set the paths with environment variables (defaults are relative to the working d
 | `NUS_ROOT` | nuScenes mini data root (`v1.0-mini`) | `data/v1.0-mini` |
 | `NUS_WORK` | output directory | `work` |
 | `PP_ROOT` | PointPillars implementation with a KITTI checkpoint (stand-in LiDAR arm), e.g. a clone of [zhulf0804/PointPillars](https://github.com/zhulf0804/PointPillars) | `PointPillars` |
-| `NUS_LIDAR_JSON` | optional `results_nusc.json` from the Colab notebook (after running `patch_json_lidar.py` once) | none |
+| `NUS_LIDAR_JSON` | optional `results_nusc.json` from the Colab notebook (LiDAR arm from MMDetection3D) | none |
 | `NUS_LIMIT` | optional number of samples | all |
 
 ```bash
